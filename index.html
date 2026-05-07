@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site educativo sobre a Macedónia do Norte e sua adesão à União Europeia">
+    <title>Macedónia do Norte - O Caminho para a Europa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SCROLL PROGRESS BAR -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+    <!-- Reusable sun SVG symbol -->
+    <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="sun-symbol" viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="10"/>
+            <line x1="30" y1="4"  x2="30" y2="14" stroke-linecap="round"/>
+            <line x1="30" y1="46" x2="30" y2="56" stroke-linecap="round"/>
+            <line x1="4"  y1="30" x2="14" y2="30" stroke-linecap="round"/>
+            <line x1="46" y1="30" x2="56" y2="30" stroke-linecap="round"/>
+            <line x1="11" y1="11" x2="18" y2="18" stroke-linecap="round"/>
+            <line x1="42" y1="42" x2="49" y2="49" stroke-linecap="round"/>
+            <line x1="49" y1="11" x2="42" y2="18" stroke-linecap="round"/>
+            <line x1="11" y1="49" x2="18" y2="42" stroke-linecap="round"/>
+        </symbol>
+    </svg>
+    <!-- NAVEGAÇÃO FIXA -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="descarregar.webp" alt="Bandeira da Macedónia do Norte" class="logo-flag">
+                <span class="logo-text">Macedónia do Norte</span>
+            </div>
+            <div class="nav-suns">
+                <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+                <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+                <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+            </div>
+            <button class="dark-mode-toggle" id="darkModeToggle" title="Alternar modo escuro">
+                <span class="dark-mode-icon">🌙</span>
+            </button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link">Início</a></li>
+                <li><a href="#historia" class="nav-link">História Breve</a></li>
+                <li><a href="#nome" class="nav-link">O Nome</a></li>
+                <li><a href="#adesao" class="nav-link">Adesão à UE</a></li>
+                <li><a href="#vantagens-ue" class="nav-link">Vantagens para UE</a></li>
+                <li><a href="#dificuldades" class="nav-link">Dificuldades</a></li>
+                <li><a href="#conclusao" class="nav-link">Conclusão</a></li>
+                <li><button class="nav-link nav-secret-btn" id="openCuriosidades">✨ Curiosidades Secretas</button></li>
+                <li><button class="nav-link nav-secret-btn" id="openQuiz">📝 Quiz Secreto</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 1. INÍCIO (HERO SECTION) -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Macedónia do Norte</h1>
+            <p class="hero-subtitle">O Caminho para a Europa</p>
+            <p class="hero-description">Uma jornada de transformação, estabilidade e prosperidade</p>
+            <p class="hero-reading-time" id="readingTime">⏱ A calcular...</p>
+            <div class="hero-buttons">
+                <a href="#historia" class="btn btn-primary">Explorar</a>
+                <button class="btn btn-share" id="shareBtn" title="Partilhar este site">🔗 Partilhar</button>
+            </div>
+            <div class="sun-decoration sun-decoration--hero">
+                <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+                <svg class="sun-icon sun-icon--lg"><use href="#sun-symbol"/></svg>
+                <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+                <svg class="sun-icon sun-icon--lg"><use href="#sun-symbol"/></svg>
+                <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- MAPA + PALETA DE CORES -->
+    <section class="mapa-paleta">
+        <div class="section-container">
+            <div class="mapa-paleta-grid">
+
+                <!-- MAPA -->
+                <div class="mapa-box">
+                    <h3 class="mapa-title">📍 Onde fica a Macedónia do Norte?</h3>
+                    <p class="mapa-subtitle">Localizada no coração dos Balcãs, faz fronteira com 5 países</p>
+                    <div class="mapa-wrapper">
+                        <iframe
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=20.4%2C40.8%2C23.1%2C42.4&layer=mapnik&marker=41.6%2C21.7"
+                            class="mapa-iframe"
+                            title="Mapa da Macedónia do Norte"
+                            loading="lazy"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="mapa-credit">Mapa: <a href="https://www.openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a></p>
+                </div>
+
+                <!-- PALETA DE CORES DA BANDEIRA -->
+                <div class="paleta-box">
+                    <h3 class="mapa-title">🎨 Cores da Bandeira</h3>
+                    <p class="mapa-subtitle">O significado por trás das cores nacionais</p>
+                    <div class="paleta-swatches">
+                        <div class="swatch">
+                            <div class="swatch-color" style="background:#C8102E;"></div>
+                            <div class="swatch-text">
+                                <p class="swatch-name">Vermelho</p>
+                                <p class="swatch-meaning">Coragem, força e o sangue dos que lutaram pela liberdade do país</p>
+                            </div>
+                        </div>
+                        <div class="swatch">
+                            <div class="swatch-color" style="background:#FFD200; border: 1px solid #ddd;"></div>
+                            <div class="swatch-text">
+                                <p class="swatch-name">Dourado / Amarelo</p>
+                                <p class="swatch-meaning">O sol de Vergina com 8 raios — símbolo de prosperidade, luz e esperança para o futuro</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flag-preview">
+                        <img src="descarregar.webp" alt="Bandeira da Macedónia do Norte" class="flag-preview-img">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVISOR -->
+    <div class="sun-divider">
+        <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon sun-icon--lg"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+    </div>
+
+    <!-- 2. HISTÓRIA BREVE (TIMELINE INTERATIVA) -->
+    <section id="historia" class="historia">
+        <div class="section-container">
+            <h2 class="section-title">História Breve</h2>
+            <p class="section-intro">Descubra os principais momentos que moldaram a Macedónia do Norte ao longo dos séculos</p>
+
+            <div class="timeline">
+                <div class="timeline-container">
+                    <div class="timeline-items">
+                        <div class="timeline-item" data-year="VI" data-image="abc.jpg" data-description="Os povos eslavos estabeleceram-se gradualmente na região dos Balcãs, incluindo o território que hoje é a Macedónia do Norte. Esta migração marcou o início da formação da identidade cultural eslava na região.">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Século VI</h3>
+                                <p>Povos eslavos começam a povoar o território da Macedónia</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="IX-X" data-image="def.jpg" data-description="Durante o Primeiro Império Búlgaro, a região floresceu culturalmente. O imperador Simeão I promoveu a educação e a cultura, estabelecendo uma tradição de alfabetização na região.">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Século IX–X</h3>
+                                <p>O território integra o Império Búlgaro</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="1018" data-image="ghi.jpg" data-description="Após a derrota do Império Búlgaro, a Macedónia passou para o controle do Império Bizantino. Este período trouxe influências culturais gregas e cristãs ortodoxas à região.">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>1018</h3>
+                                <p>Conquistada pelo Império Bizantino</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="XIV" data-image="jk.jpg" data-description="Sob o domínio sérvio, a região experimentou um período de relativa estabilidade. O rei Stefan Dušan expandiu o território sérvio, incluindo partes da Macedónia atual.">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Século XIV</h3>
+                                <p>Passa para o domínio do Reino da Sérvia</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="Final XIV" data-image="lmn.jpg" data-description="A conquista otomana trouxe mudanças significativas. A região foi integrada no vasto Império Otomano, influenciando a arquitetura, culinária e tradições locais por séculos.">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Final do Século XIV</h3>
+                                <p>Conquistada pelo Império Otomano, onde permanece vários séculos</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="Balcâs" data-image="opq.jpg" data-description="As Guerras Balcânicas (1912-1913) resultaram na divisão do território macedónio entre três países: Sérvia, Bulgária e Grécia. Esta divisão criou tensões que persistem até hoje.">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Após Guerras Balcânicas</h3>
+                                <p>Território dividido entre Sérvia, Bulgária e Grécia</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="1918" data-image="rstuv.jpg" data-description="Após a Primeira Guerra Mundial, a maior parte da Macedónia foi incorporada no Reino da Jugoslávia, unindo eslovenos, croatas, sérvios, bósnios e macedónios sob um único estado.">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Após Primeira Guerra Mundial</h3>
+                                <p>Maior parte passa a integrar o Reino da <span class="tooltip" data-tip="Estado do sul da Europa que existiu de 1918 a 1992, unindo vários povos eslavos dos Balcãs."></span>Jugoslávia</span></p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="1991" data-image="descarregar.webp" data-description="Com o colapso da Jugoslávia em 1991, a Macedónia declarou independência. Este foi um momento crucial na formação da identidade nacional macedónia moderna.">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>1991</h3>
+                                <p>Declaração de independência - República independente</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-details" id="timelineDetails">
+                        <div class="timeline-details-content">
+                            <div class="timeline-details-image">
+                                <img id="timelineImage" src="" alt="">
+                            </div>
+                            <div class="timeline-details-text">
+                                <h4 id="timelineTitle"></h4>
+                                <p id="timelineDescription"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEPARADOR - FACTO HISTÓRICO -->
+    <div class="fact-banner">
+        <div class="fact-banner-content">
+            <span class="fact-quote">"</span>
+            <p class="fact-text">A Macedónia do Norte é um dos países mais jovens da Europa — tornou-se independente em <strong>1991</strong> e adotou o seu nome atual apenas em <strong>2019</strong>, após quase três décadas de disputa diplomática.</p>
+            <span class="fact-quote">"</span>
+        </div>
+        <div class="sun-decoration sun-decoration--hero">
+            <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+            <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+            <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+            <svg class="sun-icon sun-icon--lg"><use href="#sun-symbol"/></svg>
+            <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+            <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+            <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+        </div>
+    </div>
+
+    <!-- 3. NOME - CONFLITO COM GRÉCIA -->
+    <section id="nome" class="nome">
+        <div class="section-container">
+            <h2 class="section-title">Porquê "Macedónia do Norte"?</h2>
+            <p class="section-intro">Uma disputa que durou quase três décadas</p>
+
+            <div class="conflict-intro">
+                <p>Quando o país se tornou independente em 1991, escolheu o nome "Macedónia". Porém, a <span class="tooltip" data-tip="País do sul da Europa, membro fundador da UE e da NATO, com uma região histórica chamada Macedónia."></span>Grécia</span> já tinha uma região com esse nome, causando uma disputa histórica e política que durou até 2018.</p>
+            </div>
+
+            <div class="conflict-cards">
+                <div class="conflict-card">
+                    <div class="card-icon">📍</div>
+                    <h3>Motivo 1: Confusão de Nomes</h3>
+                    <p>Podiam confundir qual é a "verdadeira" Macedónia, causando ambiguidade no cenário internacional.</p>
+                </div>
+
+                <div class="conflict-card">
+                    <div class="card-icon">⚔️</div>
+                    <h3>Motivo 2: Reivindicações Territoriais</h3>
+                    <p>Receio de possíveis reivindicações territoriais do país no futuro sobre terras gregas.</p>
+                </div>
+            </div>
+
+            <div class="resolution-box">
+                <h3>✓ Resolução (2018)</h3>
+                <p>Após um acordo histórico entre os dois países, a Macedónia passou oficialmente a chamar-se <strong>Macedónia do Norte</strong>. Durante muitos anos, era conhecida internacionalmente como "Antiga República Jugoslava da Macedónia".</p>
+                <div class="sun-decoration sun-decoration--white" style="margin-top:20px;">
+                    <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+                    <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+                    <svg class="sun-icon sun-icon--lg"><use href="#sun-symbol"/></svg>
+                    <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+                    <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVISOR -->
+    <div class="sun-divider">
+        <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon sun-icon--lg"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+    </div>
+
+    <!-- 4. ADESÃO À UE - BENEFÍCIOS PARA O PAÍS -->
+    <section id="adesao" class="adesao">
+        <div class="section-container">
+            <h2 class="section-title">Porquê Aderir à UE?</h2>
+            <p class="section-intro">Os objetivos da Macedónia do Norte para melhorar economia e estabilidade</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Financiamento</h3>
+                    <p>Receber dinheiro europeu para desenvolver infraestruturas, educação e tecnologia</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏫</div>
+                    <h3>Educação & Infraestruturas</h3>
+                    <p>Melhorar significativamente escolas, estradas, transportes e hospitais</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">💼</div>
+                    <h3>Empregos & Economia</h3>
+                    <p>Criar mais oportunidades de emprego e melhorar as condições económicas</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Estabilidade & Segurança</h3>
+                    <p>Garantir maior estabilidade política e segurança na região dos Balcãs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVISOR -->
+    <div class="sun-divider">
+        <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon sun-icon--lg"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+    </div>
+
+    <!-- 5. VANTAGENS PARA A UE -->
+    <section id="vantagens-ue" class="vantagens-ue">
+        <div class="section-container">
+            <div class="vantagens-content">
+                <div class="vantagens-text">
+                    <h2 class="section-title">Vantagens para a União Europeia</h2>
+                    <p class="section-intro">Por que a UE também beneficia desta adesão</p>
+
+                    <div class="advantage-cards">
+                        <div class="advantage-card">
+                            <div class="adv-icon">🏔️</div>
+                            <h3>Estabilidade nos Balcãs</h3>
+                            <p>Ajuda a reduzir tensões numa região historicamente instável e estratégica</p>
+                        </div>
+
+                        <div class="advantage-card">
+                            <div class="adv-icon">📈</div>
+                            <h3>Expansão do Mercado</h3>
+                            <p>Novos consumidores e oportunidades económicas para empresas europeias</p>
+                        </div>
+
+                        <div class="advantage-card">
+                            <div class="adv-icon">🗺️</div>
+                            <h3>Localização Estratégica</h3>
+                            <p>Importante ligação entre a Europa Central e o Sudeste da Europa</p>
+                        </div>
+
+                        <div class="advantage-card">
+                            <div class="adv-icon">🤝</div>
+                            <h3>Cooperação Política</h3>
+                            <p>Reforço da influência e cooperação da UE na região</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vantagens-image">
+                    <img src="uniaoeuropeia.webp" alt="Bandeiras da União Europeia - cooperação internacional" class="section-image">
+                    <div class="sun-decoration">
+                        <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+                        <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+                        <svg class="sun-icon sun-icon--lg"><use href="#sun-symbol"/></svg>
+                        <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+                        <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+                    </div>
+                    <div class="image-stat-card">
+                        <span class="image-stat-number">🌍</span>
+                        <span class="image-stat-label">A região dos Balcãs é considerada a "ponte" entre a Europa Ocidental e o Médio Oriente — a adesão da Macedónia do Norte reforça essa ligação estratégica para a UE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVISOR -->
+    <div class="sun-divider">
+        <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon sun-icon--lg"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+    </div>
+
+    <!-- 6. DIFICULDADES ATUAIS -->
+    <section id="dificuldades" class="dificuldades">
+        <div class="section-container">
+            <h2 class="section-title">Desafios Atuais</h2>
+            <p class="section-intro">Situação económica e social que reforça a necessidade de apoio europeu</p>
+
+            <div class="challenges-grid">
+                <div class="challenge-item">
+                    <h3>Salários Baixos</h3>
+                    <p>Significativamente mais baixos comparados com outros países da UE</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="animation-delay: 0.2s;"></div>
+                    </div>
+                    <span class="progress-label">65%</span>
+                </div>
+
+                <div class="challenge-item">
+                    <h3>Desemprego Juvenil</h3>
+                    <p>Especialmente alto entre os jovens</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="animation-delay: 0.4s;"></div>
+                    </div>
+                    <span class="progress-label">45%</span>
+                </div>
+
+                <div class="challenge-item">
+                    <h3>Infraestruturas</h3>
+                    <p>Estradas, transportes e hospitais precisam de investimento urgente</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="animation-delay: 0.6s;"></div>
+                    </div>
+                    <span class="progress-label">70%</span>
+                </div>
+
+                <div class="challenge-item">
+                    <h3>Corrupção</h3>
+                    <p>Problemas com funcionamento das instituições</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="animation-delay: 0.8s;"></div>
+                    </div>
+                    <span class="progress-label">55%</span>
+                </div>
+            </div>
+
+            <div class="challenge-note">
+                <p>O apoio da União Europeia é fundamental para ajudar o país a crescer e a aproximar-se dos padrões europeus, criando condições para prosperidade sustentável.</p>
+                <div class="sun-decoration sun-decoration--hero" style="margin-top:18px;">
+                    <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+                    <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+                    <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVISOR -->
+    <div class="sun-divider">
+        <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon sun-icon--lg"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+        <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+    </div>
+
+    <!-- 7. CONCLUSÃO -->
+    <section id="conclusao" class="conclusao">
+        <div class="section-container">
+            <h2 class="section-title">Uma Europa Mais Unida</h2>
+
+            <div class="conclusion-content">
+                <div class="conclusion-main">
+                    <p class="conclusion-text">A entrada da Macedónia do Norte na União Europeia representa uma oportunidade histórica.</p>
+
+                    <div class="conclusion-points">
+                        <div class="conclusion-point">
+                            <h3>Para o País</h3>
+                            <p>Melhorar a economia, criar empregos, desenvolver infraestruturas e garantir estabilidade política e segurança</p>
+                        </div>
+
+                        <div class="conclusion-point">
+                            <h3>Para a UE</h3>
+                            <p>Fortalecer a estabilidade regional, expandir mercados e consolidar influência nos Balcãs</p>
+                        </div>
+                    </div>
+
+                    <p class="conclusion-final">Esta adesão pode trazer vantagens significativas para ambos e ajudar a criar uma Europa mais unida, próspera e segura.</p>
+
+                    <a href="#inicio" class="btn btn-primary">Voltar ao Início</a>
+                </div>
+
+                <div class="conclusion-image">
+                    <img src="descarregar.webp" alt="Bandeira da Macedónia do Norte" class="conclusion-flag">
+                    <div class="sun-decoration sun-decoration--dark">
+                        <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+                        <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+                        <svg class="sun-icon sun-icon--lg"><use href="#sun-symbol"/></svg>
+                        <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+                        <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+                    </div>
+                    <p class="conclusion-caption">O futuro da Macedónia do Norte na Europa</p>
+                    <div class="image-fact-card">
+                        <p class="image-fact-icon">🕊️</p>
+                        <p class="image-fact-text">A Macedónia do Norte foi o único país a separar-se da Jugoslávia de forma completamente pacífica, sem qualquer conflito armado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="sun-decoration sun-decoration--hero" style="margin-bottom:16px;">
+                <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+                <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+                <svg class="sun-icon sun-icon--lg"><use href="#sun-symbol"/></svg>
+                <svg class="sun-icon"><use href="#sun-symbol"/></svg>
+                <svg class="sun-icon sun-icon--sm"><use href="#sun-symbol"/></svg>
+            </div>
+            <p>&copy; 2026 Macedónia do Norte - Site Educativo</p>
+            <p>Informações baseadas em dados oficiais da UE e história regional</p>
+        </div>
+    </footer>
+
+    <!-- SHARE TOAST -->
+    <div id="share-toast" class="share-toast">🔗 Link copiado!</div>
+
+    <!-- FUNFACT BUTTON + POPUP -->
+    <button id="funfact-btn" class="funfact-button" title="Curiosidade!">💡</button>
+    <div id="funfact-card" class="funfact-card" aria-live="polite">
+        <button class="funfact-close" id="funfact-close">✕</button>
+        <p class="funfact-label">Sabia que...</p>
+        <p class="funfact-text" id="funfact-text"></p>
+        <button class="funfact-next" id="funfact-next">Outra curiosidade →</button>
+    </div>
+
+    <!-- SECRET CURIOSIDADES OVERLAY -->
+    <div id="curiosidades-overlay" class="curiosidades-overlay" aria-hidden="true">
+        <div class="curiosidades-panel">
+            <button class="curiosidades-close" id="closeCuriosidades">✕</button>
+            <h2 class="curiosidades-title">✨ Curiosidades sobre a Macedónia do Norte</h2>
+            <p class="curiosidades-subtitle">Factos que provavelmente não sabias!</p>
+            <div class="curiosidades-grid" id="curiosidadesGrid"></div>
+        </div>
+    </div>
+
+    <!-- SECRET QUIZ OVERLAY -->
+    <div id="quiz-overlay" class="curiosidades-overlay" aria-hidden="true">
+        <div class="curiosidades-panel quiz-panel">
+            <button class="curiosidades-close" id="closeQuiz">✕</button>
+            <h2 class="curiosidades-title">📝 Quiz — Macedónia do Norte</h2>
+            <p class="curiosidades-subtitle">Vê quanto aprendeste! Sem pressão 😄</p>
+            <div id="quiz-container"></div>
+            <div id="quiz-result" class="quiz-result" style="display:none;"></div>
+            <div class="quiz-actions">
+                <button class="btn btn-primary" id="quiz-submit" style="display:none;">Ver Resultado</button>
+                <button class="btn btn-primary" id="quiz-restart" style="display:none;">Tentar Novamente</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLAG RAIN BUTTON -->
+    <button id="flag-rain-btn" class="flag-rain-button" title="Celebrar! 🇲🇰">
+        <img src="descarregar.webp" alt="Bandeira" style="width:36px;height:24px;border-radius:3px;object-fit:cover;">
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
